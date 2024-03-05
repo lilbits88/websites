@@ -6,96 +6,74 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👟</text></svg>">
     <title>Crazy Legs Race Series</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <nav class="bg-gray-800 p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <!-- Logo -->
-        <div>
-          <a href="#" class="flex items-center text-white">
-            <!-- Replace 'logo.png' with your logo's path -->
-            <span class="text-xl font-bold">Crazy Legs Race Series</span>
-          </a>
-        </div>
-    
-        <!-- Links and Dropdown Menus -->
-        <div class="flex items-center space-x-4">
-          <!-- Dropdown: Races -->
-          <div class="relative">
-            <button class="text-white">Races</button>
-            <div class="absolute top-full left-0 bg-gray-800 p-4 rounded shadow-lg whitespace-no-wrap w-max">
-              <!-- Replace '#' with your race pages' URLs -->
-              <a href="#" class="block text-white">Race 1</a>
-              <a href="#" class="block text-white">Race 2</a>
-              <!-- Add more race links as needed -->
-            </div>
-          </div>
-    
-          <!-- Dropdown: Community -->
-          <div class="relative">
-            <button class="text-white">Community</button>
-            <div class="absolute top-full left-0 bg-gray-800 p-4 rounded shadow-lg whitespace-no-wrap w-max">
-              <!-- Replace '#' with your community pages' URLs -->
-              <a href="#" class="block text-white text-lg py-2">Beach Clean Ups</a>
-              <a href="#" class="block text-white text-lg py-2">Course Previews</a>
-              <a href="#" class="block text-white text-lg py-2">Trail Running Film Festival</a>
-            </div>
-          </div>
-    
-          <!-- About Link -->
-          <a href="#" class="text-white">About</a>
-    
-          <!-- Contact Button -->
-          <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-            Contact
-          </button>
-        </div>
+    <nav id="desktop-nav">
+      <span class="logo">Crazy Legs Race Series</span>
+      <div> 
+          <ul class="nav-links">
+            <li class="dropdown">
+              <a href="#races">races</a>
+              <ul class="dropdown-content">
+                  <li class="dropdown">
+                      <a href="#">upcoming races</a>
+                      <ul class="dropdown-content">
+                          <li><a href="#">Forrest Gump Hump 5k Trail Run-April</a></li>
+                          <li><a href="#">Love is Love 5k Run or Walk-June</a></li>
+                          <li><a href="#">Jennie Hamilton 5 Mile Trail Run-July</a></li>
+                          <li><a href="#">Tryon Farm Trail Run-September</a></li>
+                          <li><a href="#">Running with the Big Dogs 5k-Oct</a></li>
+                          <li><a href="#">Black Cat Night Trail Run-Oct</a></li>
+                          <li><a href="#">Bigfoot Half Trail Run-Nov</a></li>
+                          <li><a href="#">Turkey Toss 5k Road Run-Nov</a></li>
+                          <li><a href="#">Dunes 5k Road Run-Dec</a></li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a href="#">past races</a>
+                      <ul class="dropdown-content">
+                          <li><a href="#">Frozen Feet 5k Trail Run- January</a></li>
+                          <li><a href="#">I Love Coffee 5k Run and Walk-January</a></li>
+                          <li><a href="#">Yeti Trail Half-February</a></li>
+                          <li><a href="#">Tombstone 50K/30K Trail Run-March</a></li>
+                      </ul>
+                  </li>
+              </ul>
+          </li>
+          
+              <li class="dropdown">
+                  <a href="#community">community</a>
+                  <ul class="dropdown-content">
+                      <li><a href="#">beach clean ups</a></li>
+                      <li><a href="#">course preview</a></li>
+                      <li><a href="#">trail running film festival</a></li>
+                  </ul>
+              </li>
+              <li><a href="#about">about</a></li>
+              <li><a href="#contact">contact</a></li>
+          </ul>
       </div>
-    </nav>
-    
-    
-          Races
-            Frozen Feet 5k Trail Run- January
-            I Love Coffee 5k Run and Walk-January
-            Yeti Trail Half-February
-            Tombstone 50K/30K Trail Run-March
-            Forrest Gump Hump 5k Trail Run-April
-            Love is Love 5k Run or Walk-June
-            Jennie Hamilton 5 Mile Trail Run-July
-            Tryon Farm Trail Run-September
-            Running with the Big Dogs 5k-Oct
-            Black Cat Night Trail Run-Oct
-            Bigfoot Half Trail Run-Nov
-            Turkey Toss 5k Road Run-Nov
-            Dunes 5k Road Run-Dec
-          Community
-            Beach Clean Ups
-            Course Previews 
-            Trail Running Film Festival
-        About
-            Contact
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-  // Get all dropdown buttons
-  const dropdownButtons = document.querySelectorAll(".relative");
-
-  // Add event listeners to each dropdown button
-  dropdownButtons.forEach(function(dropdownButton) {
-    // Get the dropdown menu associated with the button
-    const dropdownMenu = dropdownButton.querySelector(".absolute");
-
-    // Show the dropdown menu when hovering over the button
-    dropdownButton.addEventListener("mouseenter", function() {
-      dropdownMenu.classList.add("block");
-    });
-
-    // Hide the dropdown menu when the mouse leaves the button
-    dropdownButton.addEventListener("mouseleave", function() {
-      dropdownMenu.classList.remove("block");
-    });
-  });
-});
-    </script>
+  </nav>
+  <nav id="burger-nav">
+    <span class="logo">Crazy Legs Race Series</span>
+    <div class="burger-menu">
+      <div class="burger-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu-links">
+      <li><a href="#races" onclick="toggleMenu()">races</a></li>
+      <li><a href="#community" onclick="toggleMenu()">community</a></li>
+      <li><a href="#about" onclick="toggleMenu()">about</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">contact</a></li>
+    </div>
+    </div>
+  </nav>
+  <section id="hero">
+    <img class="hero-img" src="images/hero.jpeg" alt="trail markers">
+  </section>
+            <script src="script.js"></script>
   </body>
 </html>
